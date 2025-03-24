@@ -42,12 +42,12 @@ console.log(numbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); */
 
 let numbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const numbers = (array) {
- const onlyEven = array.filter( num => num 2%===0)
-  
-  return onlyEven
-}
-console.log(numbers(numbs))
+const numbers = function (array) {
+  const onlyEven = array.filter((num) => num % 2 === 0);
+
+  return onlyEven;
+};
+console.log(numbers(numbs));
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -83,15 +83,24 @@ console.log("Lista numeri + n", newArrayNumbs(arrayNumbs, n));
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+const stringLength = function (array) {
+  return array.map((str) => str.length);
+};
+
+console.log(stringLength(["Epicode", "is", "great"]));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
+
 */
-const addNumbs = function () {
-  let addArray = []
-  for (let i = 1; i <=99;i++)
-    if ()
-}
+const oddNumbs = function (array) {
+  let oddArray = [];
+  for (let i = 1; i <= 99; i++) {
+    if (i % 2 !== 0) oddArray.push(i);
+  }
+  return oddArray;
+};
+console.log(oddNumbs([]));
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
@@ -198,14 +207,36 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+const olderMovie = function (movies) {
+  let oldestMovie = movies[0];
+  movies.forEach((movie) => {
+    if (parseInt(movie.Year) < parseInt(oldestMovie.Year)) {
+      oldestMovie = movie;
+    }
+  });
+  return oldestMovie;
+};
+
+console.log(olderMovie(movies));
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
+const moviesNumber = function (movies) {
+  return movies.length;
+};
+
+console.log(moviesNumber(movies));
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+const movieTitle = function (array) {
+  const titles = movies.map((movie) => movie.Title);
+  return titles;
+};
+
+console.log(movieTitle());
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
