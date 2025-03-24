@@ -16,19 +16,51 @@ concatStrings("Resisternonsipuò", "Alritmodeljazz");
 const tenElements = function () {
   let array = [];
   for (let i = 0; i < 10; i++) {
-    let randomNum = Math.floor(Math.random() * 100);
+    let randomNum = Math.floor(Math.random() * 101);
     array.push(randomNum);
   }
   return array;
 };
 console.log("Lista elementi random", tenElements());
+
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
+/*const numbers = function (array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    let arrayElement = array[i];
+    if (arrayElement % 2 === 0) {
+      newArray.push(arrayElement);
+    }
+  }
+
+  return newArray;
+};
+
+console.log(numbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); */
+
+let numbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const numbers = (array) => numbs.filter((num) => num % 2 === 0);
+
+console.log("Numeri pari", numbers([]));
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
+
 */
+const numbsArray = [1, 2, 3, 4, 5, 6];
+
+const sumArray = function () {
+  let sum = 0;
+  numbsArray.forEach((num) => {
+    sum += num;
+  });
+  return sum;
+};
+
+console.log("Somma dei numeri all'inerno dell'array", sumArray());
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -37,6 +69,12 @@ console.log("Lista elementi random", tenElements());
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+const arrayNumbs = [1, 2, 3, 4, 5, 6, 7];
+const n = 3;
+const newArrayNumbs = function (array, n) {
+  return array.map((number) => number + n);
+};
+console.log("Lista numeri + n", newArrayNumbs(arrayNumbs, n));
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
