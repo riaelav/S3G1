@@ -42,9 +42,12 @@ console.log(numbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); */
 
 let numbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const numbers = (array) => numbs.filter((num) => num % 2 === 0);
-
-console.log("Numeri pari", numbers([]));
+const numbers = (array) {
+ const onlyEven = array.filter( num => num 2%===0)
+  
+  return onlyEven
+}
+console.log(numbers(numbs))
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -84,6 +87,11 @@ console.log("Lista numeri + n", newArrayNumbs(arrayNumbs, n));
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+const addNumbs = function () {
+  let addArray = []
+  for (let i = 1; i <=99;i++)
+    if ()
+}
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
